@@ -17,8 +17,19 @@ var request = require("request");
 var spotify = require("spotify");
 
 //Variables for user request for info
+var nodeArgs = process.argv;
 var userRequest = process.argv[2];
 var itemRequest = process.argv[3];
+    for (var i = 4; i < nodeArgs.length; i++) {
+  if (i > 3 && i < nodeArgs.length) {
+    itemRequest = itemRequest + "+" + nodeArgs[i];
+  }
+  else {
+    itemRequest += nodeArgs[i];
+  }
+    }
+
+console.log(itemRequest);
 
 theAsk(userRequest, itemRequest);
 
@@ -85,8 +96,7 @@ function fetchOMDB(movieName){
 	//If a movie was not typed it, default to the movie Clockwork Orange
 	if (itemRequest == null){
 		movieName = "Clockwork Orange";
-	}
-
+            }
 	var requestURL = "http://www.omdbapi.com/?t=" + movieName + "&tomatoes=true&y=&plot=short&r=json";
 
 	request(requestURL, function (error, response, data){
