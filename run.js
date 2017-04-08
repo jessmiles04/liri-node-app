@@ -29,8 +29,6 @@ var itemRequest = process.argv[3];
   }
     }
 
-console.log(itemRequest);
-
 theAsk(userRequest, itemRequest);
 
 
@@ -116,13 +114,13 @@ function fetchOMDB(movieName){
 		console.log("The movie's primary language is: " + JSON.parse(data)["Language"]);
 
 		appendFile("---------------------------------------------");
-		appendFile("The movie's title is: " + JSON.parse(data)["Title"]);
-		appendFile("The movie's release year is: " + JSON.parse(data)["Year"]);		
-		appendFile("The movie's rating is: " + JSON.parse(data)["imdbRating"]);
-		appendFile("The movie's plot: " + JSON.parse(data)["Plot"]);
-        appendFile("The actors are: " + JSON.parse(data)["Actors"]);
-		appendFile("It was shot in: " + JSON.parse(data)["Country"]);
-		appendFile("The movie's primary language is: " + JSON.parse(data)["Language"]);									
+		appendFile("The movie's title is: " + JSON.parse(data)["Title"]+ '\n');
+		appendFile("The movie's release year is: " + JSON.parse(data)["Year"]+ '\n');		
+		appendFile("The movie's rating is: " + JSON.parse(data)["imdbRating"]+ '\n');
+		appendFile("The movie's plot: " + JSON.parse(data)["Plot"]+ '\n');
+        appendFile("The actors are: " + JSON.parse(data)["Actors"]+ '\n');
+		appendFile("It was shot in: " + JSON.parse(data)["Country"]+ '\n');
+		appendFile("The movie's primary language is: " + JSON.parse(data)["Language"]+ '\n');									
 	});
 }//ends OMDB function
 
@@ -146,10 +144,10 @@ function fetchSpotify(song){
     console.log("The album is: " + data.tracks.items[0].album.name); //album name
 
 	//appends file to datalog    
-	appendFile("The artist is: " +data.tracks.items[0].artists[0].name); //artist name
-    appendFile("The song is: " + data.tracks.items[0].name); //track name
-    appendFile("Learn more at: " + data.tracks.items[0].href); //link
-    appendFile("The album is: " + data.tracks.items[0].album.name); //album name
+	appendFile("The artist is: " +data.tracks.items[0].artists[0].name + '\n'); //artist name
+    appendFile("The song is: " + data.tracks.items[0].name + '\n'); //track name
+    appendFile("Learn more at: " + data.tracks.items[0].href + '\n'); //link
+    appendFile("The album is: " + data.tracks.items[0].album.name + '\n'); //album name
 
 
 });
