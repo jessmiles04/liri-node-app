@@ -130,16 +130,16 @@ function fetchSpotify(song){
             var song = data.tracks.items[0];
  
     // Do something with 'data' 
-    console.log(data.tracks.items[0].artists[0].name); //artist name
-    console.log(data.tracks.items[0].name); //track name
-    console.log(data.tracks.items[0].href); //link
-    console.log(data.tracks.items[0].album.name); //album name
+    console.log("The artist is: " +data.tracks.items[0].artists[0].name); //artist name
+    console.log("The song is: " + data.tracks.items[0].name); //track name
+    console.log("Learn more at: " + data.tracks.items[0].href); //link
+    console.log("The album is: " + data.tracks.items[0].album.name); //album name
 
 	//appends file to datalog    
-	appendFile(data.tracks.items[0].artists[0].name); //artist name
-    appendFile(data.tracks.items[0].name); //track name
-    appendFile(data.tracks.items[0].href); //link
-    appendFile(data.tracks.items[0].album.name); //album name
+	appendFile("The artist is: " +data.tracks.items[0].artists[0].name); //artist name
+    appendFile("The song is: " + data.tracks.items[0].name); //track name
+    appendFile("Learn more at: " + data.tracks.items[0].href); //link
+    appendFile("The album is: " + data.tracks.items[0].album.name); //album name
 
 
 });
